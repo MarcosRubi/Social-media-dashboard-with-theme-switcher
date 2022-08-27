@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Frontend Mentor | Social Media Dashboard</title>
+</head>
+
+<body class="d-flex align-center">
+    <main class="main-container">
+        <header class="header">
+            <div class="d-flex-md jc-between align-center">
+                <div class="title">
+                    <h1>Social Media Dashboard</h1>
+                    <p>Total Followers: 23,004</p>
+                </div>
+                <div class="toggle">
+                    <div class="d-flex align-center jc-between">
+                        <label for="chkTheme">Dark Mode</label>
+                        <label for="chkTheme" class="chkTheme">
+                            <input type="checkbox" name="chkTheme" id="chkTheme" onclick="changeTheme();">
+                            <span class="ball"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="stats">
+            <div class="stats__card bg-facebook">
+                <div class="d-flex jc-center flex-column">
+                    <div class="stats__user">
+                        <div class="d-flex align-center jc-center">
+                            <img src="images/icon-facebook.svg" alt="Icon Facebook">
+                            <span>@nathanf</span>
+                        </div>
+                    </div>
+                    <div class="stats__followers">
+                        <h3>1987</h3>
+                        <p>Followers</p>
+                    </div>
+                    <div class="stats__today">
+                        <div class="d-flex align-center jc-center">
+                            <img src="images/icon-up.svg" alt="Icon Up">
+                            <span class="stats__today--green">12 Today</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats__card bg-twitter">
+                <div class="d-flex jc-center flex-column">
+                    <div class="stats__user">
+                        <div class="d-flex align-center jc-center">
+                            <img src="images/icon-twitter.svg" alt="Icon Twitter">
+                            <span>@nathanf</span>
+                        </div>
+                    </div>
+                    <div class="stats__followers">
+                        <h3>1044</h3>
+                        <p>Followers</p>
+                    </div>
+                    <div class="stats__today">
+                        <div class="d-flex align-center jc-center">
+                            <img src="images/icon-up.svg" alt="Icon Up">
+                            <span class="stats__today--green">99 Today</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats__card bg-instagram">
+                <div class="d-flex jc-center flex-column">
+                    <div class="stats__user">
+                        <div class="d-flex align-center jc-center">
+                            <img src="images/icon-instagram.svg" alt="Icon Instagram">
+                            <span>@realnathanf</span>
+                        </div>
+                    </div>
+                    <div class="stats__followers">
+                        <h3>11k</h3>
+                        <p>Followers</p>
+                    </div>
+                    <div class="stats__today">
+                        <div class="d-flex align-center jc-center">
+                            <img src="images/icon-up.svg" alt="Icon Up">
+                            <span class="stats__today--green">1099 Today</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats__card bg-youtube">
+                <div class="d-flex jc-center flex-column">
+                    <div class="stats__user">
+                        <div class="d-flex align-center jc-center">
+                            <img src="images/icon-youtube.svg" alt="Icon Twitter">
+                            <span>Nathan F.</span>
+                        </div>
+                    </div>
+                    <div class="stats__followers">
+                        <h3>8239</h3>
+                        <p>Subscribers</p>
+                    </div>
+                    <div class="stats__today">
+                        <div class="d-flex align-center jc-center">
+                            <img src="images/icon-down.svg" alt="Icon Down">
+                            <span class="stats__today--red">144 Today</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <h2>Overview - Today</h2>
+        <section class="stats stats-today">
+            <div class="stats__card">
+                <div class="stats__header">
+                    <div class="d-flex jc-between align-center">
+                        <span>Page Views</span>
+                        <img src="images/icon-facebook.svg" alt="Icon Facebook">
+                    </div>
+                </div>
+                <div class="stats__body">
+                    <div class="d-flex jc-between align-center">
+                        <h4>87</h4>
+                        <div class="d-flex align-center">
+                            <img src="images/icon-up.svg" alt="Icon Up">
+                            <span class="stats__today--green">3%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats__card">
+                <div class="stats__header">
+                    <div class="d-flex jc-between align-center">
+                        <span>Likes</span>
+                        <img src="images/icon-facebook.svg" alt="Icon Facebook">
+                    </div>
+                </div>
+                <div class="stats__body">
+                    <div class="d-flex jc-between align-center">
+                        <h4>52</h4>
+                        <div class="d-flex align-center">
+                            <img src="images/icon-down.svg" alt="Icon Down">
+                            <span class="stats__today--red">3%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats__card">
+                <div class="stats__header">
+                    <div class="d-flex jc-between align-center">
+                        <span>Likes</span>
+                        <img src="images/icon-instagram.svg" alt="Icon Instagram">
+                    </div>
+                </div>
+                <div class="stats__body">
+                    <div class="d-flex jc-between align-center">
+                        <h4>5462</h4>
+                        <div class="d-flex align-center">
+                            <img src="images/icon-up.svg" alt="Icon Up">
+                            <span class="stats__today--green">2257%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats__card">
+                <div class="stats__header">
+                    <div class="d-flex jc-between align-center">
+                        <span>Profile Views</span>
+                        <img src="images/icon-instagram.svg" alt="Icon Instagram">
+                    </div>
+                </div>
+                <div class="stats__body">
+                    <div class="d-flex jc-between align-center">
+                        <h4>52k</h4>
+                        <div class="d-flex align-center">
+                            <img src="images/icon-up.svg" alt="Icon Up">
+                            <span class="stats__today--green">1375%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats__card">
+                <div class="stats__header">
+                    <div class="d-flex jc-between align-center">
+                        <span>Retweets</span>
+                        <img src="images/icon-twitter.svg" alt="Icon Twitter">
+                    </div>
+                </div>
+                <div class="stats__body">
+                    <div class="d-flex jc-between align-center">
+                        <h4>117</h4>
+                        <div class="d-flex align-center">
+                            <img src="images/icon-up.svg" alt="Icon Up">
+                            <span class="stats__today--green">303%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats__card">
+                <div class="stats__header">
+                    <div class="d-flex jc-between align-center">
+                        <span>Likes</span>
+                        <img src="images/icon-twitter.svg" alt="Icon Twitter">
+                    </div>
+                </div>
+                <div class="stats__body">
+                    <div class="d-flex jc-between align-center">
+                        <h4>507</h4>
+                        <div class="d-flex align-center">
+                            <img src="images/icon-up.svg" alt="Icon Up">
+                            <span class="stats__today--green">553%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats__card">
+                <div class="stats__header">
+                    <div class="d-flex jc-between align-center">
+                        <span>Likes</span>
+                        <img src="images/icon-youtube.svg" alt="Icon Youtube">
+                    </div>
+                </div>
+                <div class="stats__body">
+                    <div class="d-flex jc-between align-center">
+                        <h4>107</h4>
+                        <div class="d-flex align-center">
+                            <img src="images/icon-down.svg" alt="Icon Down">
+                            <span class="stats__today--red">19%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats__card">
+                <div class="stats__header">
+                    <div class="d-flex jc-between align-center">
+                        <span>Total Views</span>
+                        <img src="images/icon-youtube.svg" alt="Icon Youtube">
+                    </div>
+                </div>
+                <div class="stats__body">
+                    <div class="d-flex jc-between align-center">
+                        <h4>1407</h4>
+                        <div class="d-flex align-center">
+                            <img src="images/icon-down.svg" alt="Icon Down">
+                            <span class="stats__today--red">12%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+            Coded by <a href="https://mrubi.vercel.app/" target="_blank">Marcos Rubí</a>.
+        </div>
+    </main>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

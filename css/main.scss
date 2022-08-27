@@ -1,0 +1,430 @@
+$Lime-Green: hsl(163, 72%, 41%);
+$Bright-Red: hsl(356, 69%, 56%);
+
+$Facebook: hsl(208, 92%, 53%);
+$Twitter: hsl(203, 89%, 53%);
+$Instagram: linear-gradient(90deg, #fdc468, #df4996);
+$YouTube: hsl(348, 97%, 39%);
+
+
+[data-theme="light"] {
+    --BG: hsl(0, 0%, 100%);
+    --Top-BG-Pattern: hsl(225, 100%, 98%);
+    --Card-BG: hsl(227, 47%, 96%);
+    --Card-BG-hover: hsl(227, 11%, 84%);
+    --Desaturated-Text: hsl(228, 12%, 44%);
+    --Text: hsl(230, 17%, 14%);
+    --Toggle: hsl(230, 22%, 74%);
+
+}
+
+[data-theme="dark"] {
+    --BG: hsl(230, 17%, 14%);
+    --Top-BG-Pattern: hsl(232, 19%, 15%);
+    --Card-BG: hsl(228, 28%, 20%);
+    --Card-BG-hover: hsl(229, 28%, 30%);
+    --Desaturated-Text: hsl(228, 34%, 66%);
+    --Text: hsl(0, 0%, 100%);
+    --Toggle: linear-gradient(90deg, hsl(210, 78%, 56%) 0%, hsl(146, 68%, 55%) 60%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--Top-BG-Pattern) 10%, var(--BG) 10%);
+    color: var(--Text);
+    transition: all 300ms;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    opacity: 0;
+
+    &.visible {
+        animation: visible 2s linear;
+        opacity: 1;
+    }
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+p,
+span {
+    color: var(--Desaturated-Text);
+    font-weight: 700;
+}
+
+.main-container {
+    width: 90%;
+    margin: 30px auto;
+    max-width: 1440px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+.jc-between {
+    justify-content: space-between;
+}
+
+.jc-center {
+    justify-content: center;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+//HEADER
+.header {
+    opacity: 0;
+
+    &.visible {
+        animation: visible .5s linear;
+        opacity: 1;
+    }
+
+    .title {
+        box-shadow: var(--Desaturated-Text) 0px 1px 0px;
+        padding-bottom: 1rem;
+    }
+
+    .toggle {
+        padding: 1rem 0px;
+
+        &:hover label {
+            color: var(--Text);
+        }
+
+        label {
+            transition: all 500ms;
+            margin-left: 10px;
+            color: var(--Desaturated-Text);
+            cursor: pointer;
+        }
+    }
+
+    input[type="checkbox"] {
+        appearance: none;
+
+        &:checked+.ball {
+            transform: translate(20px, 2px);
+        }
+    }
+
+    .chkTheme {
+        display: block;
+        width: 50px;
+        height: 27px;
+        background: var(--Toggle);
+        position: relative;
+        cursor: pointer;
+        border-radius: 30px;
+    }
+
+    .ball {
+        display: inline-block;
+        height: 23px;
+        width: 23px;
+        background-color: var(--BG);
+        border-radius: 50%;
+        top: 19px;
+        z-index: 10;
+        transform: translate(0px, 2px);
+        transition: transform 0.5s ease-in-out;
+    }
+
+}
+
+.stats {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    padding: 1rem 0;
+
+    span {
+        margin-left: 5px;
+        font-size: 0.8rem;
+    }
+
+    &__card {
+        background-color: var(--Card-BG);
+        padding: 20px;
+        text-align: center;
+        border-radius: 5px;
+        box-shadow: var(--Desaturated-Text) 0px 0px 10px -7px inset;
+        transition: all 300ms;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        opacity: 0;
+
+        &.visible {
+            animation: visible .7s linear;
+            opacity: 1;
+        }
+
+        &:hover {
+            background-color: var(--Card-BG-hover);
+        }
+
+        &.bg-facebook {
+            opacity: 0;
+
+            &::after {
+                content: "";
+                background: $Facebook;
+                position: absolute;
+                height: 2%;
+                width: 100%;
+                top: 0;
+                left: 0;
+            }
+
+            &.visible {
+                animation: visible 1s linear;
+                opacity: 1;
+            }
+        }
+
+        &.bg-twitter {
+            opacity: 0;
+
+            &.visible {
+                animation: visible 1.25s linear;
+                opacity: 1;
+            }
+
+            &::after {
+
+                content: "";
+                background: $Twitter;
+                position: absolute;
+                height: 2%;
+                width: 100%;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        &.bg-instagram {
+            opacity: 0;
+
+            &.visible {
+                animation: visible 1.5s linear;
+                opacity: 1;
+            }
+
+            &::after {
+
+                content: "";
+                background: linear-gradient(90deg, #fdc468, #df4996);
+                position: absolute;
+                height: 2%;
+                width: 100%;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        &.bg-youtube {
+            opacity: 0;
+
+            &.visible {
+                animation: visible 1.75s linear;
+                opacity: 1;
+            }
+
+            &::after {
+
+                content: "";
+                background: $YouTube;
+                position: absolute;
+                height: 2%;
+                width: 100%;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+
+    &__user {
+        margin: .5rem 0 1rem 0;
+    }
+
+    p {
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-weight: 400;
+    }
+
+    &__today {
+        margin-top: 1.5rem;
+
+        &--green {
+            color: $Lime-Green;
+        }
+
+        &--red {
+            color: $Bright-Red;
+        }
+    }
+}
+
+.stats-today {
+    .stats__card{
+        opacity: 0;
+        &:nth-child(1){
+            &.visible {
+                animation: visible 2.25s linear;
+                opacity: 1;
+            }
+        }
+        &:nth-child(2){
+            &.visible {
+                animation: visible 2.5s linear;
+                opacity: 1;
+            }
+        }
+        &:nth-child(3){
+            &.visible {
+                animation: visible 2.75s linear;
+                opacity: 1;
+            }
+        }
+        &:nth-child(4){
+            &.visible {
+                animation: visible 3s linear;
+                opacity: 1;
+            }
+        }
+        &:nth-child(5){
+            &.visible {
+                animation: visible 3.25s linear;
+                opacity: 1;
+            }
+        }
+        &:nth-child(6){
+            &.visible {
+                animation: visible 3.5s linear;
+                opacity: 1;
+            }
+        }
+        &:nth-child(7){
+            &.visible {
+                animation: visible 3.75s linear;
+                opacity: 1;
+            }
+        }
+        &:nth-child(8){
+            &.visible {
+                animation: visible 4s linear ;
+                opacity: 1;
+            }
+        }
+    }
+    .stats__header {
+        span {
+            margin: 0;
+        }
+    }
+
+    .stats__body {
+        padding-top: 20px;
+    }
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    opacity: 0;
+    &.visible {
+        animation: visible 4.25s linear ;
+        opacity: 1;
+    }
+}
+
+.attribution a {
+    color: $Facebook;
+    text-decoration: none;
+    transition: all 300ms;
+
+    &:hover {
+        color: $Twitter;
+    }
+}
+
+@keyframes visible {
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (min-width:768px) {
+    body {
+        background: linear-gradient(180deg, var(--Top-BG-Pattern) 30%, var(--BG) 30%);
+    }
+
+    .d-flex-md {
+        display: flex;
+    }
+
+    .header {
+        .title {
+            box-shadow: none;
+            padding-bottom: 0rem;
+        }
+
+        span {
+            margin-right: 10px;
+        }
+    }
+    @keyframes visible {
+        0% {
+            opacity: 0;
+        }
+    
+        30% {
+            opacity: 0;
+        }
+    
+        100% {
+            opacity: 1;
+        }
+    }
+}
